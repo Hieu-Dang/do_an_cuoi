@@ -19,9 +19,11 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				  	<?php $i=0; foreach ($data as $key => $value) {$i++; ?>
+				  	<?php $i=0;
+				  	foreach ($data as $key => $value) {
+				  	$i++; ?>
 				    <tr>
-				      <th scope="row"><?php echo $i ?></th>
+				      <th><?php echo $i ?></th>
 				      <td><?php echo $value['full-name']; ?></td>
 				      <td></td>
 				      <td></td>

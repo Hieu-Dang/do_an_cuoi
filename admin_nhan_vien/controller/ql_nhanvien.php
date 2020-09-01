@@ -4,6 +4,7 @@
 	}else{
 		$data_user=$db->get('*','admin_nhanvien',array('id'=>$_SESSION['ss_admin_nhanvien']));
 	} 	
-		$data=$db->get('*','admin_nhanvien',array());
+	$data=$db->get('*','admin_nhanvien',array());
+	in($data);
 	require_once('view/ql_nhanvien.php');
 ?>

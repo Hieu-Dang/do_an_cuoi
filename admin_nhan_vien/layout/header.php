@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-2" id='admin-header'>
 				<div class="row mt-2" >
-					<span class=" col-md-7"><??></span>
+					<span class=" col-md-7"><?php  ?></span>
 					<a href="?controller=proflie"><span class="col-md-5 ">Nhân viên</span></a>
 				</div>
 				<div class="row mt-4">
