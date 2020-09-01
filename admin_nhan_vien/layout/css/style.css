@@ -1,0 +1,18 @@
+#admin-header{
+	background-color: #424040;
+	color: white;
+}
+
+#admin-option{
+	color: white;
+	text-decoration: none;
+	height: 50px;
+	font-size: 20px;
+}
+#admin-option:hover{
+	background-color: #7c7d7e;
+}
+#admin-option a{
+	color: white;
+	text-decoration: none;
+}
