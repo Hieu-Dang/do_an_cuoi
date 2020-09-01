@@ -30,6 +30,11 @@
 				</div>
 				<div class="row mt-4">
 					<div class="col-md-12" id="admin-option">
+						<a href="?controller=doanhthu">Thông tin chung</a>
+				</div>
+				</div>
+				<div class="row mt-1">
+					<div class="col-md-12" id="admin-option">
 						<a href="?controller=doanhthu">doanh thu</a>
 					</div>
 				</div>

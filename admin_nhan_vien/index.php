@@ -24,6 +24,9 @@
 		case 'ql_nhanvien':
 			require_once('controller/ql_nhanvien.php');
 			break;	
+		case 'ql_shipper':
+			require_once('controller/ql_shipper.php');
+			break;		
 		case 'ql_donhang':
 			require_once('controller/ql_donhang.php');
 			break;		
@@ -42,8 +45,14 @@
 		case 'ql_ship':
 			require_once('controller/ql_ship.php');
 			break;	
+		case 'variable':
+				# code...
+				break;	
 		case 'xoa_nhanvien':
 			require_once('controller/xoa_nhanvien.php');
+			break;				
+		case 'xoa_shipper':
+			require_once('controller/xoa_shipper.php');
 			break;									
 		default:
 			echo "Lỗi trang";

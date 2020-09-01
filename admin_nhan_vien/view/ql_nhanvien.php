@@ -7,13 +7,13 @@
 			
 
 		<div class="container-fluid mt-3">
-			<div class="row mt-1">
-				<a href="?controller=ql_nhanvien" class="btn btn-outline-secondary col-md-1">Nhân viên</a>
-				<a href="?controller=ql_shipper" class="btn btn-outline-secondary col-md-1">Shipper</a>
-
+			<div class="row mt-1" id="select-nv">
+				<a href="?controller=ql_nhanvien" class="btn btn-outline-secondary col-md-2">Nhân viên</a>
+				<a href="?controller=ql_shipper" class="btn btn-outline-secondary col-md-2">Shipper</a>
 			</div>
-			<form method="post" action="?controller=ql_nhanvien">
+			<form method="post" action="?controller=ql_shipper">
 				<div class="row mt-1">
+					<div class="col-md-8"></div>
 					<input type="text" class="form-control col-md-3" name="keyword" placeholder="Username">
 					<button name="btn_timkiem" type="submit"  class="btn btn-primary form-control col-md-1">Tìm kiếm</button>
 				</div>
@@ -22,7 +22,7 @@
 
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-success mt-5" data-toggle="modal" data-target="#them">
-			  Thêm nhân viên
+			  Thêm shipper
 			</button>
 
 			<!-- Modal -->
@@ -39,19 +39,19 @@
 						      <div class="modal-body">
 						      	<div class="row">
 						      		<span class="col-md-4">Tên đặng nhập:</span>
-						      		<input type="text" class="form-control col-md-8" name="username" >
+						      		<input type="text" class="form-control col-md-8" name="username" id="username_add">
 						      	</div>
 						      	<div class="row mt-1">
 						      		<span class="col-md-4">Mật khẩu:</span>
-						      		<input type="password" class="form-control col-md-8" name="password">
+						      		<input type="password" class="form-control col-md-8" name="password" id="password_add">
 						      	</div>
 						      	<div class="row mt-1">
 						      		<span class="col-md-4">Họ và tên:</span>
-						      		<input type="text" class="form-control col-md-8" name="full_name" >
+						      		<input type="text" class="form-control col-md-8" name="full_name" id="full_name_add">
 						      	</div>
 						      	<div class="row mt-1">
 						      		<span class="col-md-4">Số điện thoại:</span>
-						      		<input type="text" class="form-control col-md-8" name="phone" >
+						      		<input type="text" class="form-control col-md-8" name="phone" id="phone_add" >
 						      	</div>
 						      	 <div class="row mt-1">
 						      		<span class="col-md-4">Quyền sản phẩm:</span>
@@ -85,7 +85,7 @@
 					      </form>
 			    </div>
 			  </div>
-			</div>
+			</div><!-- het modal -->
 
 
 			<table class="table table-striped mt-1">
@@ -133,19 +133,19 @@
 						      <div class="modal-body">
 						      	<div class="row">
 						      		<span class="col-md-4">Tên đặng nhập:</span>
-						      		<input type="text" class="form-control col-md-8" name="username" value="<?php echo $value['username']?>">
+						      		<input type="text" class="form-control col-md-8" name="username" id="username_edit" value="<?php echo $value['username']?>">
 						      	</div>
 						      	<div class="row mt-1">
 						      		<span class="col-md-4">Mật khẩu:</span>
-						      		<input type="password" class="form-control col-md-8" name="password" value="<?php echo $value['password']?>">
+						      		<input type="password" class="form-control col-md-8" name="password" id="password_edit" value="<?php echo $value['password']?>">
 						      	</div>
 						      	<div class="row mt-1">
 						      		<span class="col-md-4">Họ và tên:</span>
-						      		<input type="text" class="form-control col-md-8" name="full_name" value="<?php echo $value['full_name']?>">
+						      		<input type="text" class="form-control col-md-8" name="full_name" id="full_name_edit" value="<?php echo $value['full_name']?>">
 						      	</div>
 						      	<div class="row mt-1">
 						      		<span class="col-md-4">Số điện thoại:</span>
-						      		<input type="text" class="form-control col-md-8" name="phone" value="<?php echo $value['phone']?>">
+						      		<input type="text" class="form-control col-md-8" name="phone" id="phone_edit" value="<?php echo $value['phone']?>">
 						      	</div>
 						      	 <div class="row mt-1">
 						      		<span class="col-md-4">Quyền sản phẩm:</span>
@@ -174,13 +174,13 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="submit" name="btn_edit" onclick="return check_edit_user()" class="btn btn-primary">Lưu thay đổi</button>
+						        <button type="submit" name="btn_edit" onclick="return " class="btn btn-primary">Lưu thay đổi</button>
 						      </div>
 					      </form>
 					     
 					    </div>
 					  </div>
-					</div>
+					</div><!-- hết Modal -->
 				    <?php } ?>
 				  </tbody>
 			</table>
