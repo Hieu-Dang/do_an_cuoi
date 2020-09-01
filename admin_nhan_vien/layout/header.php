@@ -4,10 +4,11 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="layout/css/style.css">
-	<link rel="stylesheet" type="text/css" href="../bootstrap-4.5.2-dist/css/bootstrap.css">
-  <script src="./js/js.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	
 	<style type="text/css">
 		<?php
 		require_once('layout/css/style.css');?>
@@ -18,47 +19,53 @@
 		<div class="row">
 			<div class="col-md-2" id='admin-header'>
 				<div class="row mt-2" >
-					<span class=" col-md-7"><??></span>
-					<a href="?controller=proflie"><span class="col-md-5 ">Nhân viên</span></a>
+					<span class=" col-md-7"><?php echo $data_user[0]['full_name']?></span>
+					<a href="?controller=proflie"><span class="col-md-5 "><?php
+						if($data_user[0]['lv']==1){
+							echo 'admin';
+						}else{
+							echo "nhân viên";
+						}
+					?></span></a>
 				</div>
 				<div class="row mt-4">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=doanhthu">Quản lí doanh thu</a>
+						<a href="?controller=doanhthu">doanh thu</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_nhanvien">Quản lí nhân viên/shipper</a>
+						<a href="?controller=ql_nhanvien">nhân viên/shipper</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_donhang">Quản lí giao dịch/đơn hàng</a>
+						<a href="?controller=ql_donhang">giao dịch/đơn hàng</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_sanpham">Quản lí sản phẩm/danh mục</a>
+						<a href="?controller=ql_sanpham">sản phẩm/danh mục</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_user">Quản lí người dùng</a>
+						<a href="?controller=ql_user">người dùng</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_website">Quản lí hiển thị web</a>
+						<a href="?controller=ql_website">hiển thị web</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_feedback">Quản lí comment/feedback</a>
+						<a href="?controller=ql_feedback">comment/feedback</a>
 					</div>
 				</div>
 				<div class="row mt-1">
 					<div class="col-md-12" id="admin-option">
-						<a href="?controller=ql_ship">Quản lí tiền ship</a>
+						<a href="?controller=ql_ship">tiền ship</a>
 					</div>
 				</div>
 				<div class="row mt-1">

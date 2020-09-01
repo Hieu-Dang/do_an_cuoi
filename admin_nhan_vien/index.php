@@ -41,7 +41,10 @@
 			break;		
 		case 'ql_ship':
 			require_once('controller/ql_ship.php');
-			break;							
+			break;	
+		case 'xoa_nhanvien':
+			require_once('controller/xoa_nhanvien.php');
+			break;									
 		default:
 			echo "Lỗi trang";
 			break;

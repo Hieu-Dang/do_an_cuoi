@@ -1,34 +1,190 @@
 <?php require_once('layout/header.php'); ?>
 
 	<div class="col-md-9" id="main-screen">
-			<h1 class="text-center">Quản lí Nhân viên</h1>
+			<h1 class="text-center" id="cart">Quản lí Nhân viên</h1>
 			
- 
+ 		
 			
 
-		<div class="container mt-3">
-			<input type="text" class="form-control col-md-3" placeholder="Username">
-			<button class="btn-primary">Tìm kiếm</button>
-			<table class="table table-striped mt-5">
+		<div class="container-fluid mt-3">
+			<div class="row mt-1">
+				<a href="?controller=ql_nhanvien" class="btn btn-outline-secondary col-md-1">Nhân viên</a>
+				<a href="?controller=ql_shipper" class="btn btn-outline-secondary col-md-1">Shipper</a>
+
+			</div>
+			<form method="post" action="?controller=ql_nhanvien">
+				<div class="row mt-1">
+					<input type="text" class="form-control col-md-3" name="keyword" placeholder="Username">
+					<button name="btn_timkiem" type="submit"  class="btn btn-primary form-control col-md-1">Tìm kiếm</button>
+				</div>
+			</form>
+			
+
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-success mt-5" data-toggle="modal" data-target="#them">
+			  Thêm nhân viên
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="them" tabindex="-1" aria-labelledby="them" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="them">Thêm nhân viên</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			     <form method="post" action="?controller=ql_nhanvien">
+						      <div class="modal-body">
+						      	<div class="row">
+						      		<span class="col-md-4">Tên đặng nhập:</span>
+						      		<input type="text" class="form-control col-md-8" name="username" >
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Mật khẩu:</span>
+						      		<input type="password" class="form-control col-md-8" name="password">
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Họ và tên:</span>
+						      		<input type="text" class="form-control col-md-8" name="full_name" >
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Số điện thoại:</span>
+						      		<input type="text" class="form-control col-md-8" name="phone" >
+						      	</div>
+						      	 <div class="row mt-1">
+						      		<span class="col-md-4">Quyền sản phẩm:</span>
+						      
+						      		<select name="quyen_product" class="form-control col-md-4">
+						      			<option value="1">Có</option>
+						      			<option value="0">Không</option>
+						      		</select>
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Quyền tài khoản:</span>
+						      		
+						      		<select name="quyen_user" class="form-control col-md-4">
+						      			<option value="1">Có</option>
+						      			<option value="0">Không</option>
+						      		</select>
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Quyền đơn hàng:</span>
+						      	
+						      		<select name="quyen_oder" class="form-control col-md-4">
+						      			<option value="1">Có</option>
+						      			<option value="0">Không</option>
+						      		</select>
+						      	</div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						        <button type="submit" name="btn_add" onclick="return check_add_user()" class="btn btn-primary">Lưu</button>
+						      </div>
+					      </form>
+			    </div>
+			  </div>
+			</div>
+
+
+			<table class="table table-striped mt-1">
 				  <thead>
 				    <tr>
-				      <th scope="col">Stt</th>
-				      <th scope="col">Họ tên</th>
-				      <th scope="col">Số điện thoại</th>
-				      <th scope="col">Quyền hạn</th>
+				      <th scope="col">Mã nhân viên</th>
+				      <th scope="col">Tài khoản</th>
+				       <th scope="col">Số điện thoại</th>
+				      <th scope="col">Chức vụ</th>
+				      <th scope="col">Về sản phẩm</th>
+				      <th scope="col">Về tài khoản</th>
+				       <th scope="col">Về order</th>
+				       <th scope="col">Tác vụ</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				  	<?php $i=0; foreach ($data as $key => $value) {$i++; ?>
+				  	<?php foreach ($data as $key => $value) { ?>
 				    <tr>
-				      <th scope="row"><?php echo $i ?></th>
-				      <td><?php echo $value['full-name']; ?></td>
-				      <td></td>
-				      <td></td>
+				      <th><?php echo $value['id'] ?></th>
+				      <td><?php echo $value['username']; ?></td>
+				      <th><?php echo $value['phone'] ?></th>
+				      <td><?php if ($value['lv']=='1') {echo 'Admin';}else{echo "Nhân viên";}?></td>
+				      <td><?php if ($value['quyen_product']=='1') {echo 'Có';}else{echo "Không";} ?></td>
+				      <th><?php if ($value['quyen_user']=='1') {echo 'Có';}else{echo "Không";} ?></th>
+				      <td><?php  if ($value['quyen_oder']=='1') {echo 'Có';}else{echo "Không";} ?></td>
+				      <td>
+				      <button  class="btn btn-primary" data-toggle="modal" data-target="#sua<?php echo $value['id']?>">sửa</button>
+				      <a class="btn btn-danger" href="?controller=xoa_nhanvien&id=<?php echo $value['id']?>">xóa</a>
+				      </td>
 				    </tr>
+				  	<!-- Button trigger modal -->
+					
+
+					<!-- Modal -->
+					<div class="modal fade" id="sua<?php echo $value['id']?>" tabindex="-1" aria-labelledby="sua<?php echo $value['id']?>" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="sua<?php echo $value['id']?>">Chỉnh sửa thông tin</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <form method="post" action="?controller=ql_nhanvien&id_edit=<?php echo $value['id'] ?>">
+						      <div class="modal-body">
+						      	<div class="row">
+						      		<span class="col-md-4">Tên đặng nhập:</span>
+						      		<input type="text" class="form-control col-md-8" name="username" value="<?php echo $value['username']?>">
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Mật khẩu:</span>
+						      		<input type="password" class="form-control col-md-8" name="password" value="<?php echo $value['password']?>">
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Họ và tên:</span>
+						      		<input type="text" class="form-control col-md-8" name="full_name" value="<?php echo $value['full_name']?>">
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Số điện thoại:</span>
+						      		<input type="text" class="form-control col-md-8" name="phone" value="<?php echo $value['phone']?>">
+						      	</div>
+						      	 <div class="row mt-1">
+						      		<span class="col-md-4">Quyền sản phẩm:</span>
+						      		<span class="col-md-4"><?php if ($value['quyen_product']=='1') {echo 'Có';}else{echo "Không";} ?></span>
+						      		<select name="quyen_product" class="form-control col-md-4">
+						      			<option value="1">Có</option>
+						      			<option value="0">Không</option>
+						      		</select>
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Quyền tài khoản:</span>
+						      		<span class="col-md-4"><?php if ($value['quyen_user']=='1') {echo 'Có';}else{echo "Không";} ?></span>
+						      		<select name="quyen_user" class="form-control col-md-4">
+						      			<option value="1">Có</option>
+						      			<option value="0">Không</option>
+						      		</select>
+						      	</div>
+						      	<div class="row mt-1">
+						      		<span class="col-md-4">Quyền đơn hàng:</span>
+						      		<span class="col-md-4"><?php if ($value['quyen_oder']=='1') {echo 'Có';}else{echo "Không";} ?></span>
+						      		<select name="quyen_oder" class="form-control col-md-4">
+						      			<option value="1">Có</option>
+						      			<option value="0">Không</option>
+						      		</select>
+						      	</div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						        <button type="submit" name="btn_edit" onclick="return check_edit_user()" class="btn btn-primary">Lưu thay đổi</button>
+						      </div>
+					      </form>
+					     
+					    </div>
+					  </div>
+					</div>
 				    <?php } ?>
 				  </tbody>
 			</table>
 		</div>			
 	</div>
+
 <?php require_once('layout/footer.php'); ?>
