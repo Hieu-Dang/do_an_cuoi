@@ -128,9 +128,9 @@ function check_add_shipper() {
 	}
 }
 function check_edit_shipper() {
-	var full_name = document.getElementById('full_name_add').value;
-	var cmnd = document.getElementById('cmnd_add').value;
-	var phone = document.getElementById('phone_add').value;
+	var full_name = document.getElementById('full_name_edit').value;
+	var cmnd = document.getElementById('cmnd_edit').value;
+	var phone = document.getElementById('phone_edit').value;
 	check_phone = /((09|03|07|08|05)+([0-9]{8})\b)/g;
 	if (full_name=='') {
 		alert("Họ và tên không được để trống");

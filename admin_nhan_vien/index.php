@@ -50,6 +50,9 @@
 			break;
 		case 'xoa_nhanvien':
 			require_once('controller/xoa_nhanvien.php');
+			break;	
+		case 'xoa_shipper':
+			require_once('controller/xoa_shipper.php');
 			break;								
 		default:
 			echo "Lỗi trang";
