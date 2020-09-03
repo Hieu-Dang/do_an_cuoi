@@ -3,6 +3,7 @@
 	require_once('./model/helper.php');
 	require_once('./model/database.php');
 	$db = new Database();
+	date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 	if (isset($_GET['controller'])) {
 		$controller = $_GET['controller'];
@@ -13,8 +14,10 @@
 	switch ($controller) {
 		case 'login':
 			require_once('controller/login.php');
+			break;
+		case 'logout':
+			require_once('controller/logout.php');
 			break;	
-
 		case 'trangchu':
 			require_once('controller/trangchu.php');
 			break;	
@@ -41,7 +44,13 @@
 			break;		
 		case 'ql_ship':
 			require_once('controller/ql_ship.php');
-			break;							
+			break;
+		case 'ql_shipper':
+			require_once('controller/ql_shipper.php');
+			break;
+		case 'xoa_nhanvien':
+			require_once('controller/xoa_nhanvien.php');
+			break;								
 		default:
 			echo "Lỗi trang";
 			break;

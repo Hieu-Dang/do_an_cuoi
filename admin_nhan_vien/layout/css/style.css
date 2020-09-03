@@ -1,6 +1,7 @@
 #admin-header{
 	background-color: #424040;
 	color: white;
+	min-height: 7px;
 }
 
 #admin-option{
@@ -15,4 +16,15 @@
 #admin-option a{
 	color: white;
 	text-decoration: none;
+}
+#paging a{
+	color: #4f4a4a;
+}
+#paging a:hover{
+	background-color: #8eb2d8;
+	color: white;
+}
+#paging strong{
+	background-color:#5a5959;
+	color: white;
 }
