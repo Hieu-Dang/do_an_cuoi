@@ -46,23 +46,32 @@
 			}
 			return $result;
 		}
-		//loc dữ liệu+phân trang
-		public function loc_data($table,$condition=array(),$dieukien,$sapxep,$limit,$offset)
+		//Tìm kiếm theo like dựa và bảng và cột mình muốn tìm
+		public function data_search($table,$condition=array(),$like=array())
 		{
 			$sql = "SELECT * from $table ";
-			if (!empty($condition)) {
+			if (!empty($condition) && empty($like)) {
 				$sql.= "WHERE ";
 				foreach ($condition as $key => $value) {
-				$sql .= "$key = '$value'&&";
+				$sql .= " $key = '$value' &&";
 				}
+				$sql = trim($sql,'&&');
 			}			
-			$sql = trim($sql,'&&');
-			$sql .="order by $dieukien $sapxep ";
-			if (!empty($limit)) {
-				$sql .="LIMIT $limit ";
+			if (empty($condition) && !empty($like)) {
+				$sql.= "WHERE ";
+				foreach ($like as $key => $value) {
+				$sql .= " $key LIKE '%$value%' ";
+				}
 			}
-			if (!empty($offset)) {
-				$sql .="OFFSET $offset ";
+			if (!empty($condition) && !empty($like)) {
+				$sql.= "WHERE ";
+				foreach ($condition as $key => $value) {
+				$sql .= " $key = '$value' &&";
+				}
+				$sql = trim($sql,'&&');
+				foreach ($like as $key => $value) {
+				$sql .= " && $key LIKE '%$value%' ";
+				}
 			}
 			$query = mysqli_query($this->conn,$sql);
 			$result = array();
@@ -71,7 +80,68 @@
 					$result[]=$row;
 				}
 			}
-			return $result;
+			return $query;
+		}
+		// //hiển thị phân trang theo search
+		// public function phan_trang_search($sp_1_trang,$off,$table,$column,$value)
+		// {
+		// 	$sql = "select * from $table 
+		// 	WHERE $column LIKE '%$value%'
+		// 	order by id ASC limit ".$sp_1_trang." offset ".$off;
+		// 	$query = mysqli_query($this->conn,$sql);
+		// 	$result = array();
+		// 	if ($query) {
+		// 		while ($row = mysqli_fetch_assoc($query)) {
+		// 			$result[]=$row;
+		// 		}
+		// 	}
+		// 	return $result;
+		// }
+		//loc dữ liệu+phân trang
+		public function loc_data($table,$condition=array(),$like=array(),$dieukien,$sapxep,$limit,$off)
+		{
+			$sql = "SELECT * from $table ";
+			if (!empty($condition) && empty($like)) {
+				$sql.= "WHERE ";
+				foreach ($condition as $key => $value) {
+				$sql .= " $key = '$value' &&";
+				}
+				$sql = trim($sql,'&&');
+			}			
+			if (empty($condition) && !empty($like)) {
+				$sql.= "WHERE ";
+				foreach ($like as $key => $value) {
+				$sql .= " $key LIKE '%$value%' ";
+				}
+			}
+			if (!empty($condition) && !empty($like)) {
+				$sql.= "WHERE ";
+				foreach ($condition as $key => $value) {
+				$sql .= " $key = '$value' &&";
+				}
+				$sql = trim($sql,'&&');
+				foreach ($like as $key => $value) {
+				$sql .= " && $key LIKE '%$value%' ";
+				}
+			}
+			$sql .="order by $dieukien $sapxep ";
+			if (!empty($limit)) {
+				$sql .="LIMIT $limit ";
+			}
+			if (!empty($off)) {
+				$sql .="OFFSET $off ";
+			}
+			if ($off=='0') {
+				$sql .="OFFSET $off ";
+			}
+			$query = mysqli_query($this->conn,$sql);
+			$result = array();
+			if ($query) {
+				while ($row = mysqli_fetch_assoc($query)) {
+					$result[]=$row;
+				}
+			}
+			return $query;
 		}
 		public function insert($table,$data=array())
 		{
@@ -107,7 +177,7 @@
 			}
 			$sql = trim($sql,'&&');
 			$query = mysqli_query($this->conn,$sql);
-			return $sql;
+			return $query;
 		}
 
 		public function delete($table,$condition=array())
