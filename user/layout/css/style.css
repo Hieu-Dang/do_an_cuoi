@@ -1,0 +1,165 @@
+*{
+	font-family: Arial;
+}
+#top-nav{
+	background-color: #333;
+	color: #ffff;
+	height: 25px;
+}
+#top-nav a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 12px;
+}
+a i{
+	color: #ff9f15;
+}
+#chinh-sach i{
+	color:  #00aaaa;
+}
+#main-nav{
+	height: 100px;
+}
+#main-nav span{
+	font-size: 12px;
+}
+#btn-search{
+	border-radius: 0px;
+	border: none;
+	height: 40px;
+	background-color: #00aaaa;
+	background-clip: padding-box;
+}
+#bot-nav{
+	height: 50px;
+	background-color: #e1e1e1;
+}
+#bot-nav ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#bot-nav ul li{
+	display: inline-block;
+	}
+#bot-nav ul li a{
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 20px;
+	display: block;
+	color: #333;
+	border-right: 1px solid #fff;
+	font-weight: bold;
+	font-size: 15px;
+	
+}
+#bot-nav ul li:last-child a{
+	border-right: none;
+}
+#bot-nav ul li a:hover, #main-nav ul li.active a{
+  background-color: #00aaaa ;
+}
+
+#left-page{
+	height: 200px;
+	font-size: 15px;
+	
+}
+#left-page ul{
+	list-style: none;
+}
+
+#left-page ul li a{
+	text-decoration: none;
+	color: #333;
+}
+/*#left-page h5{
+	background-color: #00aaaa;
+	color: #ffff;
+	height: 40px;
+	width: 100%;
+}*/
+#catalog{
+	border: 0.25px solid lightgray;
+}
+#left-page #product-logo{
+	background-color: #00aaaa;
+	height: 40px;
+	color: #ffff;
+}
+#left-page #product-logo #title-logo{
+	background-color: #ff9f14;
+
+}
+
+#bo-loc{
+	border: 0.25px solid lightgray;	
+
+}
+/*#right-page{
+	padding: 0;
+}*/
+#right-page #product-logo{
+	background-color: #333;
+	height: 40px;
+	color: #ffff;
+}
+#right-page #product-logo #title-logo{
+	background-color: #ff9f14;
+}
+#chatbox{
+	border: 0.25px solid lightgray;	
+	
+}
+#best-seller{
+	border: 0.25px solid lightgray;	
+}
+#best-seller #product img{
+	width: 100%;
+	border: 0.25px solid lightgray;
+
+}
+#best-seller #product #product-price{
+	color: #00aaaa;
+}
+#best-seller #product a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #333;
+	font-size: 14px;
+}
+
+#main-page #product-logo{
+	background-color: #333;
+	color: #ffff;
+	height: 40px;
+	
+}
+#main-page #product-logo h5{
+	background-color: #ff9f14;
+}
+
+#products #product img{
+	width: 100%;
+	border: 0.25px solid lightgray;
+
+}
+#products #product a{
+	text-decoration: none;
+	color: #333;
+}
+#products #product #product-price{
+	color: #00aaaa
+}
+
+footer{
+	background-color: #333;
+	color: #ffff;
+}
+footer a{
+	text-decoration: none;
+	color: #ffff;
+}
+footer ul{
+	list-style: none;
+}

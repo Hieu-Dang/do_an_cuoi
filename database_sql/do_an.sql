@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  lun. 31 août 2020 à 05:39
--- Version du serveur :  10.4.11-MariaDB
--- Version de PHP :  7.2.26
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th9 05, 2020 lúc 05:53 PM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `do_an`
+-- Cơ sở dữ liệu: `do_an`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `admin_nhanvien`
+-- Cấu trúc bảng cho bảng `admin_nhanvien`
 --
 
 CREATE TABLE `admin_nhanvien` (
@@ -41,7 +41,7 @@ CREATE TABLE `admin_nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `admin_nhanvien`
+-- Đang đổ dữ liệu cho bảng `admin_nhanvien`
 --
 
 INSERT INTO `admin_nhanvien` (`id`, `username`, `password`, `lv`, `quyen_product`, `quyen_user`, `full_name`, `phone`, `quyen_oder`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `admin_nhanvien` (`id`, `username`, `password`, `lv`, `quyen_product
 -- --------------------------------------------------------
 
 --
--- Structure de la table `catalog`
+-- Cấu trúc bảng cho bảng `catalog`
 --
 
 CREATE TABLE `catalog` (
@@ -60,16 +60,19 @@ CREATE TABLE `catalog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `catalog`
+-- Đang đổ dữ liệu cho bảng `catalog`
 --
 
 INSERT INTO `catalog` (`id`, `name`) VALUES
-(1, 'Bướm xinh');
+(1, 'Thức ăn cho chó'),
+(2, 'Chuồng nuôi'),
+(3, 'Túi xách'),
+(4, 'Vòng cổ dây dắt');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comment_rate_product`
+-- Cấu trúc bảng cho bảng `comment_rate_product`
 --
 
 CREATE TABLE `comment_rate_product` (
@@ -84,7 +87,7 @@ CREATE TABLE `comment_rate_product` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `content_web`
+-- Cấu trúc bảng cho bảng `content_web`
 --
 
 CREATE TABLE `content_web` (
@@ -96,7 +99,7 @@ CREATE TABLE `content_web` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `devvn_quanhuyen`
+-- Cấu trúc bảng cho bảng `devvn_quanhuyen`
 --
 
 CREATE TABLE `devvn_quanhuyen` (
@@ -107,7 +110,7 @@ CREATE TABLE `devvn_quanhuyen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `devvn_quanhuyen`
+-- Đang đổ dữ liệu cho bảng `devvn_quanhuyen`
 --
 
 INSERT INTO `devvn_quanhuyen` (`maqh`, `name`, `type`, `matp`) VALUES
@@ -822,7 +825,7 @@ INSERT INTO `devvn_quanhuyen` (`maqh`, `name`, `type`, `matp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `devvn_tinhthanhpho`
+-- Cấu trúc bảng cho bảng `devvn_tinhthanhpho`
 --
 
 CREATE TABLE `devvn_tinhthanhpho` (
@@ -832,7 +835,7 @@ CREATE TABLE `devvn_tinhthanhpho` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Déchargement des données de la table `devvn_tinhthanhpho`
+-- Đang đổ dữ liệu cho bảng `devvn_tinhthanhpho`
 --
 
 INSERT INTO `devvn_tinhthanhpho` (`matp`, `name`, `type`) VALUES
@@ -903,7 +906,7 @@ INSERT INTO `devvn_tinhthanhpho` (`matp`, `name`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `devvn_xaphuongthitran`
+-- Cấu trúc bảng cho bảng `devvn_xaphuongthitran`
 --
 
 CREATE TABLE `devvn_xaphuongthitran` (
@@ -914,7 +917,7 @@ CREATE TABLE `devvn_xaphuongthitran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `devvn_xaphuongthitran`
+-- Đang đổ dữ liệu cho bảng `devvn_xaphuongthitran`
 --
 
 INSERT INTO `devvn_xaphuongthitran` (`xaid`, `name`, `type`, `maqh`) VALUES
@@ -11544,7 +11547,7 @@ INSERT INTO `devvn_xaphuongthitran` (`xaid`, `name`, `type`, `maqh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `feedback`
+-- Cấu trúc bảng cho bảng `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -11557,7 +11560,7 @@ CREATE TABLE `feedback` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `img_product`
+-- Cấu trúc bảng cho bảng `img_product`
 --
 
 CREATE TABLE `img_product` (
@@ -11567,7 +11570,7 @@ CREATE TABLE `img_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `img_product`
+-- Đang đổ dữ liệu cho bảng `img_product`
 --
 
 INSERT INTO `img_product` (`id`, `product_id`, `img`) VALUES
@@ -11576,7 +11579,7 @@ INSERT INTO `img_product` (`id`, `product_id`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `liked`
+-- Cấu trúc bảng cho bảng `liked`
 --
 
 CREATE TABLE `liked` (
@@ -11588,7 +11591,7 @@ CREATE TABLE `liked` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `money_ship`
+-- Cấu trúc bảng cho bảng `money_ship`
 --
 
 CREATE TABLE `money_ship` (
@@ -11600,7 +11603,7 @@ CREATE TABLE `money_ship` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `oder`
+-- Cấu trúc bảng cho bảng `oder`
 --
 
 CREATE TABLE `oder` (
@@ -11615,17 +11618,17 @@ CREATE TABLE `oder` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `catalog_id` int(11) NOT NULL,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `price` decimal(15,0) NOT NULL,
   `discount` int(11) NOT NULL,
   `tonkho` int(11) NOT NULL,
-  `mota_ngan` varchar(50) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `mota_ngan` varchar(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `img_main` varchar(75) NOT NULL,
   `mota_dai` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `img_phu` varchar(75) NOT NULL,
@@ -11633,30 +11636,48 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`id`, `catalog_id`, `name`, `price`, `discount`, `tonkho`, `mota_ngan`, `img_main`, `mota_dai`, `img_phu`, `status`) VALUES
-(4, 1, 'Bướm xinh', '1500000', 10, 11, 'tungu', 'fdsafdsa', 'fdsafdsaf', 'fdasfdsa', 1);
+(4, 1, 'Thức ăn cho chó con Royal Canin Poodle Puppy 500g', '150000', 10, 12, 'Thức ăn cho chó Royal Canin Poodle Puppy dành riêng cho tất cả các giống chó Tiny Poodle, Toy Poodle, Standard Poodle dưới 10 tháng tuổi.', '../libs/img_product/dogfood-1.jpg', 'Lợi ích chính\r\n\r\nThức ăn cho chó Poodle con với công thức đặc chế riêng cho nhu cầu dinh dưỡng của chó Poodle trong giai đoạn mới cai sữa. Sản phẩm được chế biến theo công thức hỗ trợ phát triển toàn diện, tăng sức đề kháng của chó con. Đồng thời tăng khả năng tư duy, vận động của chó con, đẩy nhanh quá trình phát triển võng mạc của chó.\r\n\r\nSản phẩm được chế biến làm mượt lông, dưỡng da cho chó Poodle. PINCH thúc đẩy sự hình thành axit amide, giúp bảo vệ da khỏi các tác nhân gây hại. OMEGA 3 và 6: kích thích tuyến bã nhờn dưới da tiết dầu.\r\n\r\nTăng sức đề kháng cho chó con. Chất chống oxy hóa giúp chó con tăng khả năng miễn dịch, giúp cho con lớn lên khỏe mạnh.\r\n\r\nHạt thức ăn hình vuông được chế biến đặc biệt giảm nguy cơ hình thành sỏi thận ở chó. Kích thước hạt phù hợp cỡ răng của chó, thông qua việc cọ xát vào răng giúp bảo vệ răng miệng cho chó. Size hạt phù hợp cấu tạo khoang miệng của chó, thuận lợi cho tiêu hóa.\r\n\r\nThành phần bao gồm lòng trắng trứng và các vi sinh vật giúp nhuận tràng, tốt cho hệ tiêu hóa. Đặc biệt 90% protein L.I.P hỗ trợ chó hấp thu chất dinh dưỡng, cân bằng hệ vi sinh đường ruột, giảm bớt lượng phân và mùi nhẹ hơn. Gia tăng số lượng lợi khuẩn, bảo vệ đường ruột khỏi vi khuẩn có hại.\r\nThành phần dinh dưỡng\r\n\r\nRoyal Canin Poodle Puppy giải quyết các vấn đề thường gặp ở chó Poodle. Trong thời gian mới cai sữa, vì hệ miễn dịch của chó con chưa hoàn thiện nên dễ mặc bệnh hoặc ký sinh trùng.\r\n\r\nTrong thành phần thức ăn cho chó Royal Canin Poodle Puppy có đầy đủ EPA/DHA và chất chống oxy hóa. Trong đó EPA/DHA: kích thích não bộ chó con phát triển toàn diện. Chất chống oxy hóa CELT: gia tăng sức đề kháng cho cơ thể chó.\r\nHướng dẫn cho ăn\r\n\r\nTạo thói quen ăn uống cho chó con. Dựa theo tuổi của chó, cần cho ăn một ngày 3 lần vào các giờ cố định. Cho ăn tại một chỗ để tạo thói quen tốt cho chó. Nên cho chó ăn thức ăn chế biến riêng, không cho ăn thức ăn thừa của người. Vì thức ăn của người có nhiều thành phần khiến chó bị rối loạn tiêu hóa, dễ bị bệnh béo phì. Bảo đảm cung cấp đủ nước uống cho chó. Nếu thấy nước bị chó làm bẩn, cần thay nước mới ngay lập tức.\r\n\r\nKhi muốn đổi thức ăn mới cho chó, có thể trộn lẫn thức ăn cũ và mới khi cho ăn. Tăng dần tỉ lệ trong vòng 7 ngày. Đột ngột thay đổi loại thức ăn mới có thể gây mất cân bằng hệ tiêu hóa. Chó dễ bị khó tiêu và đi ngoài.\r\n\r\nCông thức phân chia lượng thức ăn theo cân nặng có thể tham khảo trên bao bì. Hạn sử dụng 18 tháng kể từ ngày sản xuất.', 'abvabvrbr', 1),
+(5, 1, 'Thức ăn cho chó cỡ nhỏ MOSHM Mini Indoor Grain Free Nutrition 1kg', '265000', 15, 17, 'Thức ăn cho chó cỡ nhỏ MOSHM Mini Indoor Grain Free Nutrition được chế biến dành riêng cho dòng chó cỡ nhỏ như Poodle, Bichon Frise, Corgi, Cavarlier King Charles Spaniel… Phù hợp với chó ở mọi lứa tu', '../libs/img_product/dogfood-2.jpg', 'Không chứa gluten gây kích thích đường ruột ở chó. Thức ăn vị thịt bò kích thích chó ăn ngon miệng, phù hợp khẩu vị của chó.Thức ăn cho chó MOSHM được chế biến riêng theo nhu cầu dinh dưỡng của chó cỡ nhỏ.Giúp giảm nguy cơ mắc bệnh béo phì, giữ lông luôn bóng mượt, bảo vệ mắt.Giảm mùi hôi miệng và giúp răng luôn chắc khỏe.\r\nKhông gây kích ứng đường ruột ở chó\r\n', 'abvabvrbr', 1),
+(6, 4, 'Dây dắt cho chó chỉ viền Hand In Hand', '120000', 0, 18, 'Dây dắt cho chó chỉ viền Hand In Hand Reflective Stripe & Nylon Padded Lead là sản phẩm dành cho tất cả giống chó.', '../libs/img_product/daydat-1.jpg', '\r\n    Dây dắt cho chó chỉ viền Hand In Hand Reflective Stripe & Nylon Padded Lead được làm bằng chất liệu 100% nylon, có dải phản quang thuận tiện đi vào ban đêm.Với thiết kế mang phong cách truyền thống và cổ điển từ xích đeo cổ đến dây dắt.Tay nắm dây dắt và xích đeo cổ chó có lớp cao su tổng hợp làm cho chú chó cảm thấy thoải mái, không bị khó chịu.Bên cạnh đó, có mút mềm tránh ma sát cho thú cưng. Còn làm giảm sự rụng lông của chú chó của bạn.Bộ dây dắt kèm vòng cổ chó có nhiều màu cho bạn lựa chọn như màu đỏ, màu xanh dương và màu đen\r\n', '../libs/img_product/daydat-1.1.jpg', 1),
+(7, 2, 'Chuồng gỗ cho chó IRIS PWSR960', '3250000', 15, 8, 'Chuồng gỗ cho chó IRIS PWSR960 là sản phẩm chuồng phù hợp với những giống chó mèo cỡ nhỏ đến trung bình.', '../libs/img_product/chuong-1.jpg', 'Chuồng gỗ cho chó mèo IRIS PWSR960 được thiết kế nhỏ gọn thuận tiện cho những không gian nhỏ.Chất liệu bằng thép bọc epoxy dày không gỉ, không gây hại cho thú cưng.Ngoài cửa chuồng có thiết kế kéo sang ngang dễ dàng, tiết kiệm không gian.Khóa chuồng chắc chắn tránh việc chó mèo cưng chạy ra ngoài.Khay chuồng bảo vệ bề mặt sàn nhà của bạn khỏi trầy xước và vết bẩn của thú cưng.Các khay dễ dàng để loại bỏ và dễ dàng để làm sạch.Kích thước: 99,5 x 66,5 x 71 (cm)\r\n', '../libs/img_product/daydat-1.1.jpg', 1),
+(8, 4, 'Dây dắt cho chó mèo tự động DELE 001S', '335000', 0, 10, 'Dây dắt cho chó mèo tự động DELE 001S là sản phẩm phù hợp cho những giống chó dưới 15kg.', '../libs/img_product/daydat-2.jpg', 'Dây dắt cho chó mèo tự động DELE 001S là sản phẩm được thiết kế tay cầm bằng nhựa cao cấp.Cùng với nút bấm giúp kéo dài hoặc thu gọn dây dắt dễ dàng.Không còn trở nên cồng kềnh và bị rối như các dây dắt thông thường khác.Dây dắt với chất liệu 100% nylon, cực chắc chắn.Đầu dây có móc nối vào vòng cổ khi dắt cho đi dạo mà không hề gây hại cho da và lông của thú cưng.\r\n', '../libs/img_product/daydat-2.jpg', 1),
+(9, 1, 'Pate cho chó con Royal Canin Junior', '60000', 0, 20, 'Pate cho chó Royal Canin Junior dành cho chó con giống nhỏ có trọng lượng lên tới 10kg.', '../libs/img_product/dogfood-3.jpg', 'Pate cho chó con Royal Canin Junior được thiết kế để nuôi dưỡng chó con đến khi chúng được 10 tháng tuổi và chứa tất cả mọi thứ chúng cần để có một cơ thể khỏe mạnh và mạnh mẽ. Sản phẩm với công thức đặc biệt giúp kích thích sự thèm ăn của cún con khi chúng chuyển sang thức ăn đặc. Với kết cấu dạng thức ăn mềm, giúp chó con dễ ăn hơn. Hơn nữa Royal Canin Mini Junior chứa chất chống oxy hóa giúp tăng cường hệ thống miễn dịch của chó con. Ngoài ra pate cho chó còn chứa vitamin C, E, Lutein và Taurine. Hỗ trợ hệ miễn dịch đang phát triển. Beet pulp, dầu cá và protein hỗ trợ tiêu hóa cao và hỗ trợ hệ thống GI phát triển.Pate cho chó con Royal Canin Junior gồm các thành phần như dẫn xuất thịt và động vật, ngũ cốc, dầu và chất béo, dẫn xuất nguồn gốc thực vật, khoáng chất.', '', 1),
+(10, 2, 'Chuồng sắt cho chó mèo 1 tầng IRIS 09224', '1850000', 20, 7, 'Chuồng sắt cho chó mèo 1 tầng IRIS 09224 là sản phẩm chuồng phù hợp với những giống chó mèo cỡ nhỏ đến trung bình.', '../libs/img_product/chuong-2.jpg', 'Chuồng sắt cho chó mèo 1 tầng IRIS 09224 được thiết kế nhỏ gọn thuận tiện cho những không gian nhỏ.Chất liệu bằng thép bọc epoxy dày không gỉ, không gây hại cho thú cưng.Ngoài cửa chuồng có thiết kế khóa chắc chắn tránh việc mèo cưng chạy ra ngoài.Với thiết kế rộng rãi sẽ làm thú cưng thấy thoải mái khi ở trong chuồng.Bạn có thể để một vài đồ chơi cho chúng ở bên trong để chúng không bị nhàm chán\r\n', '../libs/img_product/chuong-2.2.jpg', 1),
+(11, 3, 'Túi đựng chó mèo nhựa trong size S', '295000', 0, 10, 'Túi đựng chó mèo nhựa trong size S phù hợp với tất cả giống chó và mèo cỡ nhỏ.', '../libs/img_product/tuidung-2.jpg', ' Túi đựng chó mèo nhựa trong được sử dụng khi ra đường, đi chơi rất tiện lợi, an toàn và tạo cảm giác thoải mái cho vật nuôi.Chất liệu túi không thấm nước và dễ làm vệ sinh làm sạch. Dễ dàng tháo gấp gọn lại khi cần.Màu sắc, kích thước & kiểu dáng đa dạng để khách hàng lựa chọn.\r\n', '../libs/img_product/tuidung-2.2.jpg', 1),
+(12, 3, 'Túi đựng chó mèo bằng vải cỡ bé', '250000', 5, 20, 'Túi đựng chó mèo bằng vải cỡ bé dành cho những giống chó mèo dưới 10kg.', '../libs/img_product/tuidung-1.jpg', 'Túi đựng chó mèo bằng vải cỡ bé được dùng khi ra đường, đi chơi rất tiện lợi, an toàn và tạo cảm giác thoải mái cho vật nuôi.Chất liệu bằng vải chắc chắn và dễ làm vệ sinh làm sạch. Dễ dàng tháo gấp gọn lại khi cần.Màu sắc, kích thước và kiểu dáng đa dạng để khách hàng lựa chọn\r\n', '../libs/img_product/tuidung-1.2.jpg', 1),
+(13, 2, 'Chuồng sắt cho chó mèo sơn tĩnh điện XL', '1500000', 10, 9, 'Chuồng sắt cho chó mèo sơn tĩnh điện XL là sản phẩm chuồng di động, dễ dàng gấp gọn phù hợp với tất cả giống chó và mèo.', '../libs/img_product/chuong-3.jpg', '\r\n    Chuồng sắt cho chó mèo sơn tĩnh điện XL dễ dàng tháo lắp và di chuyển. Có 2 cánh cửa ngang và cửa trên dễ dàng cho thức ăn vào hoặc di chuyển thú cưng\r\n    Khay vệ sinh bên dưới hoàn toàn có thể kéo ra để vệ sinh dễ dàng hơn. Cấu trúc chắc chắn, thông thoáng phù hợp cho tất cả các giống chó và mèo\r\n    Chuồng sắt cho chó mèo vừa có trọng lượng lại vừa có chất lượng, trọng lượng gấp 2 lần trọng lượng các sản phẩm cùng loại, thiết kế chặt chẽ\r\n    Sản phẩm chuyên dùng cho thú cưng, bên ngoài vừa thời trang vừa hữu dụng, còn có thể biến đổi thành hàng rào. Chỉ cần với 1 mức giá mà bạn đã mang về sản phẩm với 2 tính năng.\r\n    Chuồng sắt cho chó mèo với khoảng cách giữa các nan dày của chuồng là 1cm, khoảng cách như vậy ngăn chặn hiệu quả việc chân thú cưng lọt xuống dưới hoặc bị kẹp lại (thiết kế vô cùng tinh tế).Kỹ thuật hàn tỉ mỉ, chỗ mối hàn nhẵn, đẹp, không gây xước da. Ren chắc, bền, có tác dụng cố định chuồng, để chuồng kiên cố không bị rung lắc.Khi mở cửa thì nâng chuôi then cửa lên thì mới có thể dễ dàng mở cửa.Khi đóng cửa thì để chuôi theo chốc xuống dưới, như thế chú chó nhà bạn mới không mở được cửa.Thiết kế đặt khay nhựa ở dưới cùng, đặt khay ở dưới có thể thuận tiện cho việc làm sạch, khi mà làm sạch chuồng thì khay cũng không dễ bị trơn tuột, làm bẩn khu vực xung quanh.\r\n', '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `shipper`
+-- Cấu trúc bảng cho bảng `shipper`
 --
 
 CREATE TABLE `shipper` (
   `id` int(11) NOT NULL,
   `full_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `phone` varchar(13) NOT NULL,
   `cmnd` varchar(15) NOT NULL,
   `created` datetime NOT NULL,
   `username_xuli` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `shipper`
+--
+
+INSERT INTO `shipper` (`id`, `full_name`, `phone`, `cmnd`, `created`, `username_xuli`) VALUES
+(2, 'Nguyễn Văn A', '09163266355', '000132015656', '2020-09-01 20:56:34', 9),
+(3, 'Nguyễn Minh C', '098338922', '00021354666', '2020-09-01 20:57:21', 9);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `transaction`
+-- Cấu trúc bảng cho bảng `transaction`
 --
 
 CREATE TABLE `transaction` (
@@ -11677,7 +11698,7 @@ CREATE TABLE `transaction` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -11692,30 +11713,30 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone`, `address`, `created`, `full_name`) VALUES
 (2, 'tung', '123', 'admin123@gmail.com', '0383643099', 'fdsafdsaf', '2020-08-09 00:00:00', 'Tô Văn Tùng');
 
 --
--- Index pour les tables déchargées
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Index pour la table `admin_nhanvien`
+-- Chỉ mục cho bảng `admin_nhanvien`
 --
 ALTER TABLE `admin_nhanvien`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `catalog`
+-- Chỉ mục cho bảng `catalog`
 --
 ALTER TABLE `catalog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `comment_rate_product`
+-- Chỉ mục cho bảng `comment_rate_product`
 --
 ALTER TABLE `comment_rate_product`
   ADD PRIMARY KEY (`id`),
@@ -11723,47 +11744,47 @@ ALTER TABLE `comment_rate_product`
   ADD KEY `comment_rate_product_ibfk_2` (`product_id`);
 
 --
--- Index pour la table `content_web`
+-- Chỉ mục cho bảng `content_web`
 --
 ALTER TABLE `content_web`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `devvn_quanhuyen`
+-- Chỉ mục cho bảng `devvn_quanhuyen`
 --
 ALTER TABLE `devvn_quanhuyen`
   ADD PRIMARY KEY (`maqh`),
   ADD KEY `devvn_quanhuyen_ibfk_1` (`matp`);
 
 --
--- Index pour la table `devvn_tinhthanhpho`
+-- Chỉ mục cho bảng `devvn_tinhthanhpho`
 --
 ALTER TABLE `devvn_tinhthanhpho`
   ADD PRIMARY KEY (`matp`);
 
 --
--- Index pour la table `devvn_xaphuongthitran`
+-- Chỉ mục cho bảng `devvn_xaphuongthitran`
 --
 ALTER TABLE `devvn_xaphuongthitran`
   ADD PRIMARY KEY (`xaid`),
   ADD KEY `devvn_xaphuongthitran_ibfk_1` (`maqh`);
 
 --
--- Index pour la table `feedback`
+-- Chỉ mục cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`),
   ADD KEY `feedback_ibfk_1` (`user_id`);
 
 --
--- Index pour la table `img_product`
+-- Chỉ mục cho bảng `img_product`
 --
 ALTER TABLE `img_product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `img_product_ibfk_1` (`product_id`);
 
 --
--- Index pour la table `liked`
+-- Chỉ mục cho bảng `liked`
 --
 ALTER TABLE `liked`
   ADD PRIMARY KEY (`id`),
@@ -11771,14 +11792,14 @@ ALTER TABLE `liked`
   ADD KEY `liked_ibfk_2` (`product_id`);
 
 --
--- Index pour la table `money_ship`
+-- Chỉ mục cho bảng `money_ship`
 --
 ALTER TABLE `money_ship`
   ADD PRIMARY KEY (`id`),
   ADD KEY `money_ship_ibfk_1` (`matp`);
 
 --
--- Index pour la table `oder`
+-- Chỉ mục cho bảng `oder`
 --
 ALTER TABLE `oder`
   ADD PRIMARY KEY (`id`),
@@ -11786,21 +11807,21 @@ ALTER TABLE `oder`
   ADD KEY `oder_ibfk_2` (`product_id`);
 
 --
--- Index pour la table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `product_ibfk_1` (`catalog_id`);
 
 --
--- Index pour la table `shipper`
+-- Chỉ mục cho bảng `shipper`
 --
 ALTER TABLE `shipper`
   ADD PRIMARY KEY (`id`),
   ADD KEY `shipper_ibfk_1` (`username_xuli`);
 
 --
--- Index pour la table `transaction`
+-- Chỉ mục cho bảng `transaction`
 --
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`id`),
@@ -11809,162 +11830,162 @@ ALTER TABLE `transaction`
   ADD KEY `transaction_ibfk_2` (`shipper_id`);
 
 --
--- Index pour la table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT pour la table `admin_nhanvien`
+-- AUTO_INCREMENT cho bảng `admin_nhanvien`
 --
 ALTER TABLE `admin_nhanvien`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT pour la table `catalog`
+-- AUTO_INCREMENT cho bảng `catalog`
 --
 ALTER TABLE `catalog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `comment_rate_product`
+-- AUTO_INCREMENT cho bảng `comment_rate_product`
 --
 ALTER TABLE `comment_rate_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `content_web`
+-- AUTO_INCREMENT cho bảng `content_web`
 --
 ALTER TABLE `content_web`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `feedback`
+-- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `img_product`
+-- AUTO_INCREMENT cho bảng `img_product`
 --
 ALTER TABLE `img_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `liked`
+-- AUTO_INCREMENT cho bảng `liked`
 --
 ALTER TABLE `liked`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `money_ship`
+-- AUTO_INCREMENT cho bảng `money_ship`
 --
 ALTER TABLE `money_ship`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `oder`
+-- AUTO_INCREMENT cho bảng `oder`
 --
 ALTER TABLE `oder`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT pour la table `shipper`
+-- AUTO_INCREMENT cho bảng `shipper`
 --
 ALTER TABLE `shipper`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `transaction`
+-- AUTO_INCREMENT cho bảng `transaction`
 --
 ALTER TABLE `transaction`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Contraintes pour les tables déchargées
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Contraintes pour la table `comment_rate_product`
+-- Các ràng buộc cho bảng `comment_rate_product`
 --
 ALTER TABLE `comment_rate_product`
   ADD CONSTRAINT `comment_rate_product_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comment_rate_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `devvn_quanhuyen`
+-- Các ràng buộc cho bảng `devvn_quanhuyen`
 --
 ALTER TABLE `devvn_quanhuyen`
   ADD CONSTRAINT `devvn_quanhuyen_ibfk_1` FOREIGN KEY (`matp`) REFERENCES `devvn_tinhthanhpho` (`matp`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `devvn_xaphuongthitran`
+-- Các ràng buộc cho bảng `devvn_xaphuongthitran`
 --
 ALTER TABLE `devvn_xaphuongthitran`
   ADD CONSTRAINT `devvn_xaphuongthitran_ibfk_1` FOREIGN KEY (`maqh`) REFERENCES `devvn_quanhuyen` (`maqh`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `feedback`
+-- Các ràng buộc cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `img_product`
+-- Các ràng buộc cho bảng `img_product`
 --
 ALTER TABLE `img_product`
   ADD CONSTRAINT `img_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `liked`
+-- Các ràng buộc cho bảng `liked`
 --
 ALTER TABLE `liked`
   ADD CONSTRAINT `liked_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `liked_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `money_ship`
+-- Các ràng buộc cho bảng `money_ship`
 --
 ALTER TABLE `money_ship`
   ADD CONSTRAINT `money_ship_ibfk_1` FOREIGN KEY (`matp`) REFERENCES `devvn_tinhthanhpho` (`matp`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `oder`
+-- Các ràng buộc cho bảng `oder`
 --
 ALTER TABLE `oder`
   ADD CONSTRAINT `oder_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `oder_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `product`
+-- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`catalog_id`) REFERENCES `catalog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `shipper`
+-- Các ràng buộc cho bảng `shipper`
 --
 ALTER TABLE `shipper`
   ADD CONSTRAINT `shipper_ibfk_1` FOREIGN KEY (`username_xuli`) REFERENCES `admin_nhanvien` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `transaction`
+-- Các ràng buộc cho bảng `transaction`
 --
 ALTER TABLE `transaction`
   ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`username_xuli`) REFERENCES `admin_nhanvien` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
