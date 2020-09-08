@@ -191,6 +191,18 @@
 			$query = mysqli_query($this->conn,$sql);
 			return $query;
 		}
-
+		public function get_data_last($table,$condition,$limit)
+		{
+			$sql = "SELECT * FROM $table
+			ORDER BY $condition DESC LIMIT $limit";
+			$query=mysqli_query($this->conn,$sql);
+			$result = array();
+			if ($query) {
+				while ($row = mysqli_fetch_assoc($query)) {
+					$result[]=$row;
+				}
+			}
+			return $result;
+		}
 	}
 ?>

@@ -32,7 +32,10 @@
 			break;		
 		case 'ql_sanpham':
 			require_once('controller/ql_sanpham.php');
-			break;		
+			break;	
+		case 'ql_catalog':
+			require_once('controller/ql_catalog.php');
+			break;	
 		case 'ql_user':
 			require_once('controller/ql_user.php');
 			break;		
@@ -53,7 +56,10 @@
 			break;	
 		case 'xoa_shipper':
 			require_once('controller/xoa_shipper.php');
-			break;								
+			break;	
+		case 'xoa_sanpham':
+			require_once('controller/xoa_sanpham.php');
+			break;							
 		default:
 			echo "Lỗi trang";
 			break;

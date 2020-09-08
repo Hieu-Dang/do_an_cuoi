@@ -46,4 +46,76 @@
 		}
 		return $html;
 	}
+	//Hàm upload file theo điều kiện
+	function upload_file_one($file,$link,$size,$condition=array())
+	{
+		$error='';
+		//Bước 1 : Tạo đường dẫn upload lên hệ thống
+		$target_file= $link.basename($file['name']);
+		//bước 2 : kiểm tra điều kiện upload
+		//2.1: kích thước
+		if ($file['size'] > 5242880) {
+			$error="Chỉ được upload file dưới 5md";
+		}
+		//2.2: kiểu file
+		$file_type= pathinfo($file['name'], PATHINFO_EXTENSION);
+		$file_type_allow=$condition;
+		if (!in_array(strtolower($file_type), $file_type_allow)) {
+				$error="Chỉ cho upload file ảnh";
+		}
+		//2.3: kiểm tra tồn tại, nếu tồn tại thì thêm 1 số đằng sau
+		$num =1;
+		$target_file= substr($target_file, 0, strrpos($target_file, "."));
+		while (file_exists($target_file.".".$file_type)) {
+			$target_file=$target_file.$num;
+			$num++;	
+		}
+		$target_file.=".".$file_type;
+		//bước 3: kiểm tra lỗi và update
+		if (empty($error)) {
+			move_uploaded_file($file['tmp_name'], $target_file);
+		}
+		return array($error,$target_file);
+	}
+	//Hàm upload nhiều file theo điều kiện
+	function update_file_more($file,$link,$size,$condition=array())
+	{
+		$error='';
+		$file_more=array();
+		$target_file=array();
+		//Bước 1 : Xử lí mảng file
+		foreach ($file as $key => $value) {
+			foreach ($value as $index => $value) {
+				$file_more[$index][$key]= $value;
+			}
+		}
+		foreach ($file_more as $key => $value) {
+			//Bước 2 : Tạo đường dẫn upload lên hệ thống
+			$target_file[$key]= $link.basename($value['name']);
+			//Bước 3 : kiểm tra điều kiện upload
+			//3.1: kích thước
+			if ($value['size'] > 5242880) {
+				$error="Chỉ được upload file dưới 5md";
+			}
+			//3.2: kiểu file
+			$file_type= pathinfo($value['name'], PATHINFO_EXTENSION);
+			$file_type_allow=$condition;
+			if (!in_array(strtolower($file_type), $file_type_allow)) {
+					$error="Chỉ cho upload file ảnh";
+			}
+			//3.3:kiểm tra tồn tại, nếu tồn tại thì thêm 1 số đằng sau
+			$num =1;
+			$target_file[$key]= substr($target_file[$key], 0, strrpos($target_file[$key], "."));
+			while (file_exists($target_file[$key].".".$file_type)) {
+				$target_file[$key]=$target_file[$key].$num;
+				$num++;	
+			}
+			$target_file[$key].=".".$file_type;
+			//bước 4: kiểm tra lỗi và update
+			if (empty($error)) {
+				move_uploaded_file($value['tmp_name'], $target_file[$key]);
+			}
+		}
+		return array($error,$target_file);
+	}
 ?>

@@ -17,7 +17,7 @@
 					<input type="hidden" name="controller" value="ql_shipper">
 					<input type="text" class="form-control col-md-3" name="keyword" placeholder="Họ Tên" value="<?php 
 					echo (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>">
-					<button type="submit"  class="btn btn-primary form-control col-md-2">Tìm kiếm</button>
+					<button type="submit"  class="btn btn-primary form-control col-md-2"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 			
@@ -84,8 +84,8 @@
 				      <th><?php echo $value['created'] ?></th>
 				      <th><?php echo $db->get('*','admin_nhanvien',array('id'=>$value['username_xuli']))[0]['full_name']; ?></th>
 				      <td>
-				      <button  class="btn btn-primary" data-toggle="modal" data-target="#sua<?php echo $value['id']?>">sửa</button>
-				      <a class="btn btn-danger" href="?controller=xoa_shipper&id=<?php echo $value['id']?>">xóa</a>
+				      <button  class="btn btn-primary" data-toggle="modal" data-target="#sua<?php echo $value['id']?>"><i class="fa fa-edit"></i></button>
+				      <a class="btn btn-danger" href="?controller=xoa_shipper&id=<?php echo $value['id']?>"><i class="fa fa-trash-alt"></i></a>
 				      </td>
 				    </tr>
 				  	<!-- Button trigger modal -->
