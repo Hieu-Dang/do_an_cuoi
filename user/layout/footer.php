@@ -1,29 +1,32 @@
 </div>	
-	<footer>
+	<footer class="mt-4">
        <div class="container">
          <div class="row">
-            <div class="footer-box col-md-3">
-                 <div class="item">
+         	<div class="col-md-1"></div>
+            <div class=" col-md-3">
+                 
                     <h3><span>Giới thiệu</span></h3>
-                 </div>
+                 
                      <ul>
                         <li><a>Về chúng tôi</a></li>
                         <li> <a href="">Hỏi đáp</a></li>
                         <li><a href="">Phản hồi về trang web</a></li>
                       </ul>
                     </div>
-             <div class="col-md-4">
-                 <div class="item">
+             <div class="col-md-1"></div>       
+             <div class="col-md-3">
+                
                      <h3> <span>Trợ giúp</span></h3>
-                 </div>
+               
                      <ul>
 	                   <li><a>Về chúng tôi</a></li>
 	                   <li> <a href="">Hỏi đáp</a></li>
 	                   <li><a href="">Phản hồi về trang web</a></li>
                       </ul>
                     </div>
-                <div class=" col-md-4">
-                    <div class="item">
+               <div class="col-md-1"></div>     
+              <div class=" col-md-3">
+                    
                         <h3>Liên hệ</h3>
                             <ul>
                                 <li><a href=""><i class="fas fa-phone-alt"></i> 0919175811</a></li>

@@ -25,7 +25,6 @@
 				exit();
 			}
 		}
-
 		
 		public function get($select,$table,$condition=array()){
 			//b1: tạo cấu trúc sql
@@ -156,12 +155,10 @@
 			}
 			//b4: xóa dấu phẩy ở cuối đi
 			$value_str = trim($value_str, ",");
-
 			$sql = "INSERT INTO $table ($fields) VALUES ($value_str)";
 			$query = mysqli_query($this->conn,$sql);
 			return $query;
 		}
-
 		public function update($table ,$data = array(),$condition=array())
 		{
 			//b1: lặp để lấy chuỗi
@@ -179,10 +176,8 @@
 			$query = mysqli_query($this->conn,$sql);
 			return $query;
 		}
-
 		public function delete($table,$condition=array())
 		{
-
 			$sql = "DELETE FROM $table WHERE ";
 			foreach ($condition as $key => $value) {
 				$sql .= "$key = '$value'&&";
@@ -192,5 +187,18 @@
 			return $query;
 		}
 
+		public function get_data_last($table,$condition,$limit)
+		{
+			$sql = "SELECT * FROM $table
+			ORDER BY $condition DESC LIMIT $limit";
+			$query=mysqli_query($this->conn,$sql);
+			$result = array();
+			if ($query) {
+				while ($row = mysqli_fetch_assoc($query)) {
+					$result[]=$row;
+				}
+			}
+			return $result;
+		}
 	}
-?>
+?>	

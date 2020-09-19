@@ -1,9 +1,9 @@
 <?php require_once('layout/header.php'); ?>
 <div class="row mt-2" id="body-page">
-	<div id="left-page" class="col-md-2">
+	<div id="left-page" class="col-md-3 p-0">
 		<div class="col-md-12 mt-1 p-0" id="catalog">
 			<div class="row m-0" id="product-logo">
-				<h5  id="title-logo" class="center h-100 pt-2 text-center col-md-2"><i class="fas fa-bars"></i></h5>
+				<h5  id="title-logo" class="pt-2 m-0 col-md-2"><i class="fas fa-bars"></i></h5>
 				 <p class="m-2">TẤT CẢ DANH MỤC</p> 
 			</div>
 			<div class="list-group">
@@ -15,7 +15,7 @@
 		</div>
 		<div class="col-md-12 mt-3 p-0" id="bo-loc">
 			<div class="row m-0" id="product-logo">
-				<h5  id="title-logo" class="pt-2 h-100 m-0 col-md-2"><i class="center fas fa-filter"></i></h5>
+				<h5  id="title-logo" class="pt-2 m-0 col-md-2"><i class="fas fa-filter"></i></h5>
 				 <p class="m-2">BỘ LỌC TÌM KIẾM</p> 
 			</div>
 			<span class="ml-2">Giá cả</span>
@@ -28,29 +28,16 @@
 		</div>
 	</div>
 
-	<div id="main-page" class="col-md-8 mt-1">
+	<div id="main-page" class="col-md-6 mt-1">
 		<div id="cent-main-page" class="">
-			<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-			  <div class="carousel-inner">
-			    <div class="carousel-item active">
-			        <img src="../libs/img_content_web/slide-1.jpg" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="../libs/img_content_web/slide-2.jpg" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="../libs/img_content_web/slide-3.jpg" class="d-block w-100" alt="...">
-			    </div>
-			  </div>
+			<div class="row m-0" id="product-logo">
+				<h5 class="pt-2 m-0 col-md-3">SẢN PHẨM</h5>
 			</div>
-			<div class="row mt-2 m-0" id="product-logo">
-				<h5 class="center pt-2 m-0 col-md-2">SẢN PHẨM</h5>
-			</div>
-			<div class="row mt-4 " id="products">
+			<div class="row pl-5 mt-3 " id="products">
 				<?php foreach ($data as $key => $value) { ?>
-					<div class="col-md-3" id="product">
-						<div class="m-auto" id="product-img"><a href="?controller=chitietsp"><img src="<?php echo $value['img_main']?>"></a></div>
-					 <a class="text-center" id="product-name" href="?controller=chitietsp"><p class="mt-3"><?php echo $value['name']?></p></a>
+					<div class="col-5 mr-1" id="product">
+						<div id="product-img"><a href="?controller=chitietsp"><img src="<?php echo $value['img_main']?>"></a></div>
+					<a class="text-center" id="product-name" href="?controller=chitietsp"><p class="mt-3"><?php echo $value['name']?></p></a>
 						<h6 class="text-center" id="product-price"><?php echo number_format($value['price'])?>₫</h6>
 						<a class="text-center" id="add-to-cart" href=""><h6><i class="fas fa-cart-plus"></i></h6></a>
 					</div>
@@ -60,10 +47,10 @@
 		</div>
 	</div>
 	
-	<div id="right-page" class="col-md-2">
+	<div id="right-page" class="col-md-3 p-0">
 		<div class="col-12 mt-1 p-0" id="chatbox">
 			<div class="row m-0" id="product-logo">
-				<h5  id="title-logo" class="center pt-2 m-0 col-md-2"><i class="fas fa-bookmark"></i></h5>
+				<h5  id="title-logo" class="pt-2 m-0 col-md-2"><i class="fas fa-bookmark"></i></h5>
 				 <p class="m-2">HỖ TRỢ TRỰC TUYẾN</p> 
 			</div>
 			<h6 class="text-center mt-2">HOTLINE</h6>
@@ -72,14 +59,14 @@
 		</div>
 		<div class="col-12 mt-3 p-0" id="best-seller">
 			<div class="row m-0" id="product-logo">
-				<h5  id="title-logo" class="center pt-2 m-0 col-md-2"><i class="fas fa-bookmark"></i></h5>
+				<h5  id="title-logo" class="pt-2 m-0 col-md-2"><i class="fas fa-bookmark"></i></h5>
 				 <p class="m-2">SẢN PHẨM MỚI NHẤT</p> 
 			</div>
-			<?php foreach ($two_pd as $key => $value) { ?>
+			<?php foreach ($new_product as $key => $value) { ?>
 			<div class="row mt-3">
 				<div class="col-md-2"></div>
 				<div id="product" class="col-md-8">
-					<div class="m-auto" id="product-img"><a href="?controller=product-details"><img src="<?php echo $value['img_main']?>"></a></div>
+					<div id="product-img"><a href="?controller=product-details"><img src="<?php echo $value['img_main']?>"></a></div>
 					<a class="text-center" id="product-name" href="?controller=product-details"><p class="mt-3"><?php echo $value['name']?></p></a>
 					<h6 class="text-center" id="product-price"><?php echo number_format($value['price'])?>₫</h6>
 					<a class="text-center" id="add-to-cart" href=""><h6><i class="fas fa-cart-plus"></i></h6></a>

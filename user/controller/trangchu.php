@@ -1,6 +1,6 @@
 <?php
 	 $data=$db->get('*','product',array()); 
-	 $new_product=$db->get('*','product',array('id' => '12'));
+	 $two_pd = $db->get('*','product',array('catalog_id' => '1'));
 	require_once('view/trangchu.php');
 
 
